@@ -12,4 +12,6 @@ interface AWSInterface {
      */
     @LambdaFunction
     fun startMNFT(request: StartServerRequest?): StartServerResponse?
+    @LambdaFunction
+    fun stopMNFT(request: StartServerRequest?): StartServerResponse?
 }

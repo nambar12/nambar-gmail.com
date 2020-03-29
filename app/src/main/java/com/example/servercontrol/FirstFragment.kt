@@ -7,9 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
-import com.amazonaws.mobileconnectors.lambdainvoker.*;
-import com.amazonaws.auth.CognitoCachingCredentialsProvider;
-import com.amazonaws.regions.Regions;
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -27,8 +24,13 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.button_first).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        view.findViewById<Button>(R.id.button_start).setOnClickListener {
+            (activity as MainActivity).startMNFT()
+        }
+
+        view.findViewById<Button>(R.id.button_stop).setOnClickListener {
+            (activity as MainActivity).stopMNFT()
         }
     }
+
 }
